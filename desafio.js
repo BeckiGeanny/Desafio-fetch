@@ -40,3 +40,5 @@ console.log(emailInputField)
 if (localStorage.getItem("email")){
    emailInputField.value = localStorage.getItem("email")
 }
+
+fetch
