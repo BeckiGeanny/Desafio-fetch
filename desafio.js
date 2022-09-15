@@ -41,4 +41,10 @@ if (localStorage.getItem("email")){
    emailInputField.value = localStorage.getItem("email")
 }
 
-fetch
+fetch('https://api.open-meteo.com/v1/forecast?latitude=34.05&longitude=-118.24&hourly=temperature_2m&current_weather=true')
+.then((response) => response.json())
+.then((data) => {
+    const weatherp = document.getElementById("weather")
+    console.log(data)
+    weatherp.innerText = JSON.stringify(data.current_weather)
+})
